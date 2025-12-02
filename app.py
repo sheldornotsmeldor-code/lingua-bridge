@@ -33,10 +33,10 @@ def save_to_vocab(original, selection, context, notes):
     df.to_csv(CSV_FILE, index=False)
     return df
 
-# --- THE AI BRAIN (GEMINI 1.5 PRO) ---
+# --- THE AI BRAIN (GEMINI 2.5 flash) ---
 def get_gemini_response(prompt):
     # UPGRADE: Switched to 'gemini-1.5-pro' for better nuance and reasoning
-    model = genai.GenerativeModel('gemini-1.5-pro')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     response = model.generate_content(prompt)
     return response.text
 
